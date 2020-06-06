@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+		<div class="card">
+			<div class="card-header" th:text="${title}"></div>
+			
+			<div class="card-body">
+
+				<h4 class="card-tittle">
+					<a th:href="@{/orden/nuevo}" class="btn btn-outline-primary btn-xs">Agregar orden</a>
+				</h4>
+				
+				
+				<table class="table table-striped " th:if="${!ordenes.isEmpty()}">
+					<thead class="bg-dark text-white text-center">
+						<tr>
+							<td>Id</td>
+							<td>numero de mesa</td>
+							
+							<td>id bebida</td>
+							<td>cantidad de bebidas</td>
+							<td>total</td>
+							
+							<td>id plato</td>
+							<td>cantidad de platos</td>
+							<td>total</td>
+							
+							<td>id postre</td>
+							<td>cantidad de postre</td>
+							<td>total</td>
+							
+							<td>fecha</td>
+							<td>hora</td>
+							<td>notas</td>
+							
+							<td>orden activa</td>
+							<td>orden entregada</td>
+							<td>orden pagada</td>
+							<td>orden preparada</td>
+							
+							<td>Editar</td>
+							<td>Eliminar</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="orden: ${ordenes}">
+							<td th:text="${orden.idOrden}"></td>
+							<td th:text="${orden.mesa}"></td>
+							
+							<td th:text="${orden.bebida}"></td>
+							<td th:text="${orden.cantidadBebida}"></td>
+							<td th:text="${orden.totalBebida}"></td>
+							
+							<td th:text="${orden.platillo}"></td>
+							<td th:text="${orden.cantidadPlato}"></td>
+							<td th:text="${orden.totalPlato}"></td>
+							
+							<td th:text="${orden.postre}"></td>
+							<td th:text="${orden.cantidadPostre}"></td>
+							<td th:text="${orden.totalPostre}"></td>
+							
+							<td th:text="${orden.fecha}"></td>
+							<td th:text="${orden.hora}"></td>
+							<td th:text="${orden.notas}"></td>
+							
+							<td th:text="${orden.ordenActiva}"></td>
+							<td th:text="${orden.ordenEntregada}"></td>
+							<td th:text="${orden.ordenPagada}"></td>
+							<td th:text="${orden.ordenPreparada}"></td>
+							<td th:text="${orden.totalOrden}"></td>
+							
+			
+							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/orden/editar/} + ${orden.idOrden}">Editar</a></td>
+							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/orden/eliminar/} + ${orden.idOrden}" onclick="return confirm('Desea eliminar el la orden?');">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
