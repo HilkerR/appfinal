@@ -46,30 +46,22 @@ public class Cliente extends Audit {
 	}
 
 	
-
 	public Long getIdCliente() {
 		return idCliente;
 	}
-
 
 
 	public void setIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
 	}
 
-
-
 	public Long getTelefono() {
 		return telefono;
 	}
 
-
-
 	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
-
-
 
 	public String getCoreo() {
 		return this.coreo;
@@ -87,7 +79,6 @@ public class Cliente extends Audit {
 		this.nombre = nombre;
 	}
 
-	
 	public Orden getOrden() {
 		return this.orden;
 	}

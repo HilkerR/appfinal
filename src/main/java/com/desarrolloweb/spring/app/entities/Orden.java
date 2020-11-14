@@ -102,8 +102,6 @@ public class Orden extends Audit {
 	public Orden() {
 	}
 
-	
-
 	public Date getFecha() {
 		return this.fecha;
 	}
@@ -112,23 +110,18 @@ public class Orden extends Audit {
 		this.fecha = fecha;
 	}
 
-
 	public Long getIdOrden() {
 		return idOrden;
 	}
-
-
 
 	public void setIdOrden(Long idOrden) {
 		this.idOrden = idOrden;
 	}
 
 
-
 	public Long getCantidadBebida() {
 		return cantidadBebida;
 	}
-
 
 
 	public void setCantidadBebida(Long cantidadBebida) {
