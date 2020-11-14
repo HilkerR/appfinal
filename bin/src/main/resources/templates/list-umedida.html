@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+
+
+	
+	<div class="container py-4">
+		<div class="card">
+			<div class="card-header" th:text="${title}"></div>
+			
+			<div class="card-body">
+
+				<h4 class="card-tittle">
+					<a th:href="@{/umedida/nuevo}" class="btn btn-outline-primary btn-xs">Agregar Unidad de Medida</a>
+				</h4>
+				
+				
+				<table class="table table-striped " th:if="${!umedidas.isEmpty()}">
+					<thead class="bg-dark text-white text-center">
+						<tr>
+							<td>Id</td>
+							<td>Descripcion</td>
+							<td>Editar</td>
+							<td>Eliminar</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="umedida: ${umedidas}">
+							<td th:text="${umedida.idUniad}"></td>
+							<td th:text="${umedida.descripcion}"></td>
+							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/umedida/editar/} + ${umedida.idUniad}">Editar</a></td>
+							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/umedida/eliminar/} + ${umedida.idUniad}" onclick="return confirm('Desea eliminar La Unidad de Medida?');">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+
+
+	
+	<div class="container py-4">
+		<div class="card">
+			<div class="card-header" th:text="${title}"></div>
+			
+			<div class="card-body">
+
+				<h4 class="card-tittle">
+					<a th:href="@{/postre/nuevo}" class="btn btn-outline-primary btn-xs">Agregar postre</a>
+				</h4>
+				
+				
+				<table class="table table-striped " th:if="${!postres.isEmpty()}">
+					<thead class="bg-dark text-white text-center">
+						<tr>
+							<td>Id</td>
+							<td>Descripcion</td>
+							<td>precio</td>
+							<td>tipo</td>
+							<td>Editar</td>
+							<td>Eliminar</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="postre: ${postres}">
+							<td th:text="${postre.idPostre}"></td>
+							<td th:text="${postre.descripcion}"></td>
+							<td th:text="${postre.precio}"></td>
+							<td th:text="${postre.tipo}"></td>
+							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/postre/editar/} + ${postre.idPostre}">Editar</a></td>
+							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/postre/eliminar/} + ${postre.idPostre}" onclick="return confirm('Desea eliminar el postre?');">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+
+
+	
+	<div class="container py-4">
+		<div class="card">
+			<div class="card-header" th:text="${title}"></div>
+			
+			<div class="card-body">
+
+				<h4 class="card-tittle">
+					<a th:href="@{/rol/nuevo}" class="btn btn-outline-primary btn-xs">Agregar ROL</a>
+				</h4>
+				
+				
+				<table class="table table-striped " th:if="${!listadoRol.isEmpty()}">
+					<thead class="bg-dark text-white text-center">
+						<tr>
+							<td>Id</td>
+							<td>Descripcion</td>
+							<td>Editar</td>
+							<td>Eliminar</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="rol: ${listadoRol}" >
+							<td th:text="${rol.idRol}"></td>
+							<td th:text="${rol.descripcion}"></td>
+							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/rol/editar/} + ${rol.idRol}">Editar</a></td>
+							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/rol/eliminar/} + ${rol.idRol}" onclick="return confirm('Desea eliminar el Rol?');">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<nav th:replace="paginator-nav :: paginator"></nav>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f975984f774, pid=8428, tid=8438
+#
+# JRE version: OpenJDK Runtime Environment (13.0+33) (build 13+33)
+# Java VM: OpenJDK 64-Bit Server VM (13+33, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x3774]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e" (or dumping to /home/jesus/eclipse-workspace/desarrollo-web/core.8428)
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:36593 -Dfile.encoding=UTF-8 com.desarrolloweb.spring.app.DesarrolloWebApplication
+
+Host: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz, 4 cores, 3G, Manjaro Linux
+Time: Sun Oct 27 15:11:59 2019 CST elapsed time: 485 seconds (0d 0h 8m 5s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f975413a000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=8438, stack(0x00007f971b9a1000,0x00007f971baa2000)]
+
+Stack: [0x00007f971b9a1000,0x00007f971baa2000],  sp=0x00007f971ba9f180,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x3774]
+C  [libjimage.so+0x3926]
+C  [libjimage.so+0x3dc4]

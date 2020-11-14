@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container py-4">
+		<h1 class="text-secundary border border-primary border-top-0 border-left-0 border-right-0" th:text="${title}"></h1>
+	</div>
+	<div class="container">
+		<div class="card bg-dark text-white">
+			
+			<div class="card-body">
+				<form th:action="@{/orden/nuevo}" th:object="${orden}" method="post">
+					
+					<div class="form-group row">					
+						<label class="col-sm-2 col-form-label">Numero de mesa</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{mesa}" class="form-control" 
+							required placeholder="Ingrese el numero de mesa" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">bebida</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{bebida}" class="form-control"
+							required placeholder="Ingrese le ID de la bebida" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cantidad</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{cantidadBebida}" class="form-control"
+							required placeholder="Ingrese la cantidad de bebidas" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">total</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{totalBebida}" class="form-control"
+							required placeholder="ingre el total de la bebida" />
+						</div>
+					</div>
+					
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Platillo</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{platillo}" class="form-control"
+							required placeholder="Ingrese le ID de la platillo" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cantidad</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{cantidadPlato}" class="form-control"
+							required placeholder="Ingrese la cantidad de plato" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">total</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{totalPlato}" class="form-control"
+							required placeholder="ingre el total de la plato" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Postre</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{postre}" class="form-control"
+							required placeholder="Ingrese le ID de la postre" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cantidad</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{cantidadPostre}" class="form-control"
+							required placeholder="Ingrese la cantidad de postre" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">total</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{totalPostre}" class="form-control"
+							required placeholder="ingre el total de la postre" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">fecha</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{fecha}" class="form-control"
+							required placeholder="Ingrese la feccha" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">hora</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{hora}" class="form-control"
+							required placeholder="Ingrese la hora" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">notas</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{notas}" class="form-control"
+							required placeholder="ingre las notas de orden" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Orden activa</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{ordenActiva}" class="form-control"
+							required placeholder="Estado de la orden" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Orden Entregada</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{ordenEntregada}" class="form-control"
+							required placeholder="estado de la orden" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Orden Pagada</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{ordenPagada}" class="form-control"
+							required placeholder="estado orden" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Orden Preparada</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{ordenPreparada}" class="form-control"
+							required placeholder="estado orden" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">total</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{totalOrden}" class="form-control"
+							required placeholder="total de la orden" />
+						</div>
+					</div>
+
+				
+				<input type="hidden" th:field="*{idOrden}" />
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<input type="submit" value="Guardar" class="btn btn-secondary" />
+						</div>
+					</div>
+
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

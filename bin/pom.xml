@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.8.RELEASE</version>
-		<relativePath/> <!-- El gato estubo aqui -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.desarrolloweb.spring.app</groupId>
 	<artifactId>desarrollo-web</artifactId>
