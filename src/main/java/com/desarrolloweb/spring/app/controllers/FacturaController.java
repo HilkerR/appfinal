@@ -22,26 +22,26 @@ import com.desarrolloweb.spring.app.util.PageRender;
 public class FacturaController {
 	@Autowired
 	private FacturaRepository repository;
-	
+
 	@GetMapping(value="/listar")
-	public String Listar(@RequestParam(name="page", defaultValue="0") int page, Model model)
+	public String listar(@RequestParam(name="page", defaultValue="0") int page, Model model)
 	{
 		Pageable pageRequest = PageRequest.of(page, 4, Sort.by(Order.asc("idFactura")));
 
-		Page<Factura> facturas = repository.findAll(pageRequest);
+		Page<Factura> factura = repository.findAll(pageRequest);
 
-		PageRender<Factura> pageRender = new PageRender<Factura>("/factura/listar", facturas);
+		PageRender<Factura> pageRender = new PageRender<Factura>("/factura/listar", factura);
 		
-		model.addAttribute("titulo", "Listado de inventario");
-		model.addAttribute("facturas", facturas);
+		model.addAttribute("titulo", "Listado de Factura");
+		model.addAttribute("listadoFactura", factura);
 		model.addAttribute("page", pageRender);
 		return "list-factura";
 	}
-	
+
 	@GetMapping(value="/nuevo")
 	public String nuevo(Model model)
 	{
-		model.addAttribute("title", "Nueva factura");
+		model.addAttribute("title", "Nuevo factura");
 		model.addAttribute("factura", new Factura());
 		return "form-factura";
 	}
@@ -67,7 +67,7 @@ public class FacturaController {
 		}
 		return "redirect:/factura/listar";
 	}
-	
+
 	@PostMapping(value = "/nuevo")
 	public String guardar(Factura factura)
 	{

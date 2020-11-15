@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.desarrolloweb.spring.app.dao.InventarioRepository;
+
 import com.desarrolloweb.spring.app.entities.Inventario;
 import com.desarrolloweb.spring.app.util.PageRender;
 
@@ -22,22 +24,22 @@ import com.desarrolloweb.spring.app.util.PageRender;
 public class InventarioController {
 	@Autowired
 	private InventarioRepository repository;
-	
+
 	@GetMapping(value="/listar")
-	public String Listar(@RequestParam(name="page", defaultValue="0") int page, Model model)
+	public String listar(@RequestParam(name="page", defaultValue="0") int page, Model model)
 	{
 		Pageable pageRequest = PageRequest.of(page, 4, Sort.by(Order.asc("idInventario")));
 
-		Page<Inventario> inventarios = repository.findAll(pageRequest);
+		Page<Inventario> inventario = repository.findAll(pageRequest);
 
-		PageRender<Inventario> pageRender = new PageRender<Inventario>("/inventario/listar", inventarios);
+		PageRender<Inventario> pageRender = new PageRender<Inventario>("/inventario/listar", inventario);
 		
-		model.addAttribute("titulo", "Listado de inventario");
-		model.addAttribute("inventarios", inventarios);
+		model.addAttribute("titulo", "Listado de Inventario");
+		model.addAttribute("listadoInventario", inventario);
 		model.addAttribute("page", pageRender);
 		return "list-inventario";
 	}
-	
+
 	@GetMapping(value="/nuevo")
 	public String nuevo(Model model)
 	{
@@ -67,7 +69,7 @@ public class InventarioController {
 		}
 		return "redirect:/inventario/listar";
 	}
-	
+
 	@PostMapping(value = "/nuevo")
 	public String guardar(Inventario inventario)
 	{

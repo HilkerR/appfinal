@@ -14,8 +14,8 @@
 					<a th:href="@{/orden/nuevo}" class="btn btn-outline-primary btn-xs">Agregar orden</a>
 				</h4>
 				
-				
-				<table class="table table-striped " th:if="${!ordenes.isEmpty()}">
+				<div class="table-responsive">
+				<table class="table " th:if="${!ordenes.isEmpty()}">
 					<thead class="bg-dark text-white text-center">
 						<tr>
 							<td>Id</td>
@@ -40,7 +40,7 @@
 							<td>orden entregada</td>
 							<td>orden pagada</td>
 							<td>orden preparada</td>
-							
+							<td>Total Orden</td>
 							<td>Editar</td>
 							<td>Eliminar</td>
 						</tr>
@@ -53,11 +53,11 @@
 							<td th:text="${orden.cantidadBebida}"></td>
 							<td th:text="${orden.totalBebida}"></td>
 							
-							<td th:text="${orden.platillo}"></td>
+							<td th:text="${orden.platillo.descripcion}"></td>
 							<td th:text="${orden.cantidadPlato}"></td>
 							<td th:text="${orden.totalPlato}"></td>
 							
-							<td th:text="${orden.postre}"></td>
+							<td th:text="${orden.postre.descripcion}"></td>
 							<td th:text="${orden.cantidadPostre}"></td>
 							<td th:text="${orden.totalPostre}"></td>
 							
@@ -77,6 +77,7 @@
 						</tr>
 					</tbody>
 				</table>
+				</div>
 				<nav th:replace="paginator-nav :: paginator"></nav>
 
 			</div>

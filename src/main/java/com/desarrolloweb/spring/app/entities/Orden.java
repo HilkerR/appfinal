@@ -45,16 +45,16 @@ public class Orden extends Audit {
 	private String notas;
 
 	@Column(name="orden_activa")
-	private Boolean ordenActiva;
+	private String ordenActiva;
 
 	@Column(name="orden_entregada")
-	private Boolean ordenEntregada;
+	private String ordenEntregada;
 
 	@Column(name="orden_pagada")
-	private Boolean ordenPagada;
+	private String ordenPagada;
 
 	@Column(name="orden_preparada")
-	private Boolean ordenPreparada;
+	private String ordenPreparada;
 
 	@Column(name="total_bebida")
 	private double totalBebida;
@@ -176,35 +176,37 @@ public class Orden extends Audit {
 		this.notas = notas;
 	}
 
-	public Boolean getOrdenActiva() {
-		return this.ordenActiva;
+	
+
+	public String getOrdenActiva() {
+		return ordenActiva;
 	}
 
-	public void setOrdenActiva(Boolean ordenActiva) {
+	public void setOrdenActiva(String ordenActiva) {
 		this.ordenActiva = ordenActiva;
 	}
 
-	public Boolean getOrdenEntregada() {
-		return this.ordenEntregada;
+	public String getOrdenEntregada() {
+		return ordenEntregada;
 	}
 
-	public void setOrdenEntregada(Boolean ordenEntregada) {
+	public void setOrdenEntregada(String ordenEntregada) {
 		this.ordenEntregada = ordenEntregada;
 	}
 
-	public Boolean getOrdenPagada() {
-		return this.ordenPagada;
+	public String getOrdenPagada() {
+		return ordenPagada;
 	}
 
-	public void setOrdenPagada(Boolean ordenPagada) {
+	public void setOrdenPagada(String ordenPagada) {
 		this.ordenPagada = ordenPagada;
 	}
 
-	public Boolean getOrdenPreparada() {
-		return this.ordenPreparada;
+	public String getOrdenPreparada() {
+		return ordenPreparada;
 	}
 
-	public void setOrdenPreparada(Boolean ordenPreparada) {
+	public void setOrdenPreparada(String ordenPreparada) {
 		this.ordenPreparada = ordenPreparada;
 	}
 

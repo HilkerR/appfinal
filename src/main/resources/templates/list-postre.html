@@ -34,7 +34,7 @@
 							<td th:text="${postre.idPostre}"></td>
 							<td th:text="${postre.descripcion}"></td>
 							<td th:text="${postre.precio}"></td>
-							<td th:text="${postre.tipo}"></td>
+							<td th:text="${postre.tipo.descripcion}"></td>
 							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/postre/editar/} + ${postre.idPostre}">Editar</a></td>
 							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/postre/eliminar/} + ${postre.idPostre}" onclick="return confirm('Desea eliminar el postre?');">Eliminar</a></td>
 						</tr>

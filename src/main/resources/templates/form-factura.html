@@ -13,13 +13,7 @@
 			<div class="card-body">
 				<form th:action="@{/factura/nuevo}" th:object="${factura}" method="post">
 					
-					<div class="form-group row">					
-						<label class="col-sm-2 col-form-label">descripcion</label>
-						<div class="col-sm-6">
-							<input type="text" th:field="*{descripcion}" class="form-control" 
-							required placeholder="Descripcion de la factura" />
-						</div>
-					</div>
+				
 					
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">direccion</label>

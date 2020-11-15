@@ -32,7 +32,7 @@
 							<td th:text="${platillo.idPlato}"></td>
 							<td th:text="${platillo.descripcion}"></td>
 							<td th:text="${platillo.precio}"></td>
-							<td th:text="${platillo.tipo}"></td>
+							<td th:text="${platillo.tipo.descripcion}"></td>
 							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/platillo/editar/} + ${platillo.idPlato}">Editar</a></td>
 							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/platillo/eliminar/} + ${platillo.idPlato}" onclick="return confirm('Desea eliminar el platillo?');">Eliminar</a></td>
 						</tr>

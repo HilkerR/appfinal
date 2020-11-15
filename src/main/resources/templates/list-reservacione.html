@@ -17,8 +17,8 @@
 					<a th:href="@{/reservacione/nuevo}" class="btn btn-outline-primary btn-xs">Agregar Reservacion</a>
 				</h4>
 				
-				
-				<table class="table table-striped " th:if="${!reservaciones.isEmpty()}">
+				<div class="table-responsive">
+				<table class="table" th:if="${!reservaciones.isEmpty()}">
 					<thead class="bg-dark text-white text-center">
 						<tr>
 							<td>Id</td>
@@ -38,21 +38,23 @@
 					<tbody>
 						<tr th:each="reservacione: ${reservaciones}">
 							<td th:text="${reservacione.idReservaciones}"></td>
-							<td th:text="${reservacione.cliente}"></td>
+							<td th:text="${reservacione.cliente.nombre}"></td>
 							<td th:text="${reservacione.hora}"></td>
 							<td th:text="${reservacione.fecha}"></td>
 							<td th:text="${reservacione.cantpersonas}"></td>
-							<td th:text="${reservacione.platillo}"></td>
-							<td th:text="${reservacione.postre}"></td>
-							<td th:text="${reservacione.bebida}"></td>
-							<td th:text="${reservacione.tipo}"></td>
-							<td th:text="${reservacione.usuario}"></td>
+							<td th:text="${reservacione.platillo.descripcion}"></td>
+							<td th:text="${reservacione.postre.descripcion}"></td>
+							<td th:text="${reservacione.bebida.descripcion}"></td>
+							<td th:text="${reservacione.tipo.descripcion}"></td>
+							<td th:text="${reservacione.usuario.nombre}"></td>
 							
 							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/reservacione/editar/} + ${reservacione.idReservaciones}">Editar</a></td>
 							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/reservacione/eliminar/} + ${reservacione.idReservaciones}" onclick="return confirm('Desea eliminar La Reservacion?');">Eliminar</a></td>
 						</tr>
 					</tbody>
 				</table>
+				</div>
+				
 				<nav th:replace="paginator-nav :: paginator"></nav>
 
 			</div>
