@@ -32,8 +32,8 @@
 							<td th:text="${inventario.idInventario}"></td>
 							<td th:text="${inventario.nombre}"></td>
 							<td th:text="${inventario.cantidad}"></td>
-							<td th:text="${inventario.proveedor}"></td>
-							<td th:text="${inventario.umedida}"></td>
+							<td th:text="${inventario.proveedor.nombre}"></td>
+							<td th:text="${inventario.uMedida.descripcion}"></td>
 							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/inventario/editar/} + ${inventario.idInventario}">Editar</a></td>
 							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/inventario/eliminar/} + ${inventario.idInventario}" onclick="return confirm('Desea eliminar el Producto?');">Eliminar</a></td>
 						</tr>

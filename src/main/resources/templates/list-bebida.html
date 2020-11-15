@@ -31,7 +31,7 @@
 							<td th:text="${bebida.idBebida}"></td>
 							<td th:text="${bebida.descripcion}"></td>
 							<td th:text="${bebida.precio}"></td>
-							<td th:text="${bebida.tipo}"></td>
+							<td th:text="${bebida.tipo.descripcion}"></td>
 							<td class="text-center"><a class="btn btn-outline-success btn-xs" th:href="@{/bebida/editar/} + ${bebida.idBebida}">Editar</a></td>
 							<td class="text-center"><a class="btn btn-outline-danger btn-xs" th:href="@{/bebida/eliminar/} + ${bebida.idBebida}" onclick="return confirm('Desea eliminar el bebida?');">Eliminar</a></td>
 						</tr>

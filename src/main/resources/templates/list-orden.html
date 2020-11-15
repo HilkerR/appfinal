@@ -19,7 +19,6 @@
 					<thead class="bg-dark text-white text-center">
 						<tr>
 							<td>Id</td>
-							<td>numero de mesa</td>
 							
 							<td>id bebida</td>
 							<td>cantidad de bebidas</td>
@@ -49,9 +48,8 @@
 					<tbody>
 						<tr th:each="orden: ${ordenes}">
 							<td th:text="${orden.idOrden}"></td>
-							<td th:text="${orden.mesa}"></td>
 							
-							<td th:text="${orden.bebida}"></td>
+							<td th:text="${orden.bebida.descripcion}"></td>
 							<td th:text="${orden.cantidadBebida}"></td>
 							<td th:text="${orden.totalBebida}"></td>
 							
