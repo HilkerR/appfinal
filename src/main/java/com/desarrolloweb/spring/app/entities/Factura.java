@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * The persistent class for the factura database table.
@@ -30,6 +31,7 @@ public class Factura extends Audit {
 	private String direccion;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 
 	private Long nit;

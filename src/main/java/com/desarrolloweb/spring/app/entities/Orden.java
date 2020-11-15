@@ -6,6 +6,7 @@ import javax.persistence.NamedQuery;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * The persistent class for the orden database table.
@@ -36,6 +37,7 @@ public class Orden extends Audit {
 	private Long cantidadPostre;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 
 	private String hora;

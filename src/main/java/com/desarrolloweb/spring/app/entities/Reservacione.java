@@ -6,6 +6,8 @@ import javax.persistence.Table;
 import javax.persistence.NamedQuery;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 /**
  * The persistent class for the reservaciones database table.
@@ -30,6 +32,7 @@ public class Reservacione extends Audit {
 	private Long cantpersonas;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 
 	private Long hora;

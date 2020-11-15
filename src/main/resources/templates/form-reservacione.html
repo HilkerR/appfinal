@@ -32,10 +32,13 @@
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">Fecha</label>
 						<div class="col-sm-6">
-							<input type="text" th:field="*{fecha}" class="form-control" 
-							required placeholder="DD-MM-AAAA" />
+							<input type="date" th:field="*{fecha}" class="form-control" />
+							<small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('fecha')}" th:errors="*{fecha}"></small>
 						</div>
-					</div>	
+					</div>
+
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">Cantidad de Personas</label>
 						<div class="col-sm-6">
