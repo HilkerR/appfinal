@@ -54,19 +54,60 @@
         <a class="nav-link"  th:href="@{/bebida/listar}"><i class="icon ion-md-wine  mr-2 lead"></i>Bebidas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link"  th:href="@{/proveedor/listar}"><i class="icon ion-md-people mr-2 lead"></i>Proveedores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   th:href="@{/cliente/listar}"><i class="icon ion-md-people mr-2 lead"></i>Clientes</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/factura/listar}"><i class="icon ion-md-journal mr-2 lead"></i>Facturas</a>
       </li>
 
+  <li class="nav-item">
+        <a class="nav-link" th:href="@{/reservacione/listar}"><i class="icon ion-md-journal mr-2 lead"></i>Reservaciones</a>
+      </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          aria-haspopup="true" aria-expanded="false" ><i class="icon ion-md-list-box mr-2 lead"></i></a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+         <a class="dropdown-item" th:href="@{/inventario/listar}"><i class="icon ion-md-list-box mr-2 lead"></i>Inventario</a>
+          <a class="dropdown-item"  th:href="@{/umedida/listar}"><i class="icon ion-md-list-box mr-2 lead"></i>Unidad de medida</a>
+          <a class="dropdown-item" th:href="@{/mesa/listar}"><i class="icon ion-md-list-box mr-2 lead"></i>Mesas</a>
+          
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" ><i class="icon ion-md-beer mr-2 lead"></i></a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" th:href="@{/orden/listar}" ><i class="icon ion-md-list-box mr-2 lead"></i>Orden</a>
+          <a class="dropdown-item"  th:href="@{/postre/listar}"><i class="icon ion-md-list-box mr-2 lead"></i>Postre</a>
+          <a class="dropdown-item"  th:href="@{/platillo/listar}"><i class="icon ion-md-list-box mr-2 lead"></i>Platillos</a>
+          
+          
+          
+        </div>
+      </li>
+      
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" ><i class="icon ion-md-contact mr-2 lead"></i></a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item"  th:href="@{/rol/listar}" ><i class="icon ion-md-checkmark-circle mr-2 lead"></i>Roles</a>
+          <a class="dropdown-item"   th:href="@{/tipo/listar}"><i class="icon ion-md-checkmark-circle mr-2 lead"></i>Tipos</a>
+          <a class="dropdown-item"  th:href="@{/usuario/listar}"><i class="icon ion-md-checkmark-circle mr-2 lead"></i>Users</a>
+          
+          
+          
+        </div>
+      </li>
+      
+   
+      
+   
+        
+        
 
     </ul>
     <!-- Links -->
